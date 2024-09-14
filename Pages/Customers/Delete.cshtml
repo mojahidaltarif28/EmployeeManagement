@@ -1,0 +1,25 @@
+@page
+@model EmployeeManagement.Pages.Customers.Delete
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="delete-form">
+    <div class="mx-auto rounded  p-4" style="width: 400px; border:3px solid gray">
+        <h2 class="text-center mb-3 text-danger">Delete Customer</h2>
+        <hr>
+        <p>Are you sure you want to delete this customer?</p>
+        <p class="text-center"><Strong>Name: </Strong>@Model.customer_name</p>
+        <hr>
+        <form method="post" class="col-sm-12 border-0">
+            <div class="row ">
+                <div class="col-sm-6 d-grid">
+                    <a href="/Index" class="btn btn-success">NO</a>
+                </div>
+                <div class="col-sm-6 d-grid">
+                    <button type="submit" class="btn btn-danger">YES</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

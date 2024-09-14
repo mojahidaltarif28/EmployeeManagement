@@ -1,0 +1,37 @@
+@page
+@model EmployeeManagement.Pages.Customers.Edit
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<div class="form-size">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <h2>Edit Employee</h2>
+            <input type="hidden" id="id" class="form-control" asp-for="Id">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter Name" asp-for="customer_name">
+            <span asp-validation-for="customer_name" class="text-danger text-sm"></span>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter Email" asp-for="email">
+            <span asp-validation-for="email" class="text-danger"></span>
+            <br>
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" class="form-control" placeholder="Enter Mobile Number" asp-for="mobile">
+            <span asp-validation-for="mobile" class="text-danger"></span>
+            <br>
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" class="form-control" asp-for="dob">
+            <span asp-validation-for="dob" class="text-danger"></span>
+            <br>
+            <label for="img">Upload Photo:</label><br>
+            <input type="file" id="img" accept="image/*" asp-for="ImageFile">
+
+        </div>
+        <div class="edit-btns">
+            <a role="button" href="/Index" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-primary ">Submit</button>
+        </div>
+    </form>
+</div>

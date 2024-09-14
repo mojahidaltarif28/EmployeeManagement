@@ -1,0 +1,162 @@
+.main-container{
+  display: flex;
+  padding-top: 3px;
+}
+.left-nav{
+  width: 20vw;
+  height: 90vh;
+  border: 1px solid grey;
+}
+.nav-item{
+  border-bottom: 1px solid gray;
+  padding:4px 0 4px 8px;
+}
+.nav-item a{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(15, 15, 15);
+}
+.nav-item a i{
+margin-right: 4px;
+}
+.container{
+ width: 80vw;
+ height: 90vh;
+ border: 2px solid gray;
+}
+footer{
+  border: 2px solid gray;
+  border-top: 0px;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-section{
+  border: 1px solid gray;
+  padding: 15px 30px 15px 30px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.main-container-m{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px 20px 40px;
+}
+.search-item{
+  font-size: 1.2rem;
+  width: 23%;
+  padding-left: 8px;
+}
+.search-btn{
+  width: 60px;
+  background:none;
+  border: none;
+}
+.search-btn i{
+  font-size: 1.5rem;
+  color: rgb(0, 128, 255);
+}
+.employee-record-section{
+  border: 1px solid gray;
+  width: 100%;
+  height: 70vh;
+  margin-top: 20px;
+}
+.user-img{
+  height: 50px;
+  width: 50px;
+}
+.table-user{
+  width: 100%;
+}
+td{
+ border: 1px solid gray;
+ text-align: center;
+ font-size: 1.1rem;
+}
+th{
+  text-align: center;
+}
+td button{
+  background:none;
+  border: none;
+}
+td button i{
+  font-size: 1.7rem;
+}
+
+h2{
+  text-align: center;
+}
+form{
+  width: 40vw;
+  border: 1px solid gray;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+}
+.form-size{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  
+ 
+}
+.ebb1{
+  font-size: 1.6rem;
+  color: green;
+}
+.ebb2{
+  font-size: 1.6rem;
+  color: red;
+}
+
+.employee-record-section{
+  overflow-y: hidden;
+}
+.edit-btns{
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.delete-form{
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.aisort{
+  color: black;
+  font-size: 0.85rem;
+}
+.aisort i{
+  margin-left: 2px;
+}
+.aisort:hover{
+  color: gray;
+}
+.pagination1{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  height: 40px;
+  padding: 5px 20vw 0 10px;
+
+}
+.page-content{
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.table-data-section{
+  width: 100%;
+  height: 92%;
+}

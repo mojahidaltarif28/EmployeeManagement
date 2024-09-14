@@ -1,0 +1,121 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="main-container-m">
+    <form method="get" class="search-section">
+        <input type="text" name="searchName" class="search-item" placeholder="Name"
+            value="@Request.Query["searchName"]">
+        <input type="date" name="searchDob" class="search-item" placeholder="Date Of Birth"
+            value="@Request.Query["searchDob"]">
+        <input type="email" name="searchEmail" class="search-item" placeholder="Email"
+            value="@Request.Query["searchEmail"]">
+        <input type="text" name="searchMobile" class="search-item" placeholder="Mobile"
+            value="@Request.Query["searchMobile"]">
+        <button type="submit" class="search-item search-btn"><i class="bi bi-search"></i></button>
+    </form>
+
+    <div class="employee-record-section">
+        <div class="table-data-section">
+            <table class="table-user">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>
+                            Full Name
+                            <a class="aisort"
+                                href="?sortColumn=customer_name&sortOrder=@(Model.SortColumn == "customer_name" && Model.SortOrder == "asc" ? "desc" : "asc")">
+                                <i class="fa-solid fa-sort"></i>
+                            </a>
+                        </th>
+                        <th>
+                            Email
+                            <a class="aisort"
+                                href="?sortColumn=email&sortOrder=@(Model.SortColumn == "email" && Model.SortOrder == "asc" ? "desc" : "asc")">
+                                <i class="fa-solid fa-sort"></i>
+                            </a>
+                        </th>
+                        <th>
+                            Mobile
+                            <a class="aisort"
+                                href="?sortColumn=mobile&sortOrder=@(Model.SortColumn == "mobile" && Model.SortOrder == "asc" ? "desc" : "asc")">
+                                <i class="fa-solid fa-sort"></i>
+                            </a>
+                        </th>
+                        <th>
+                            Date Of Birth
+                            <a class="aisort"
+                                href="?sortColumn=dob&sortOrder=@(Model.SortColumn == "dob" && Model.SortOrder == "asc" ? "desc" : "asc")">
+                                <i class="fa-solid fa-sort"></i>
+                            </a>
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var customer in Model.CustomerList)
+                    {
+                        <tr>
+                            <td>
+                                @if (customer.image != null && customer.image.Length > 0)
+                                {
+                                    <img class="user-img" src="data:image/jpeg;base64,@Convert.ToBase64String(customer.image)"
+                                        alt="Customer Image" />
+                                }
+                                else
+                                {
+                                    <span>no image</span>
+                                }
+                            </td>
+                            <td>@customer.customer_name</td>
+                            <td>@customer.email</td>
+                            <td>@customer.mobile</td>
+                            <td>@customer.dob</td>
+                            <td>
+                                <a class="ebb1" href="/Customers/Edit?id=@customer.Id"><i
+                                        class="bi bi-pencil-square"></i></a>
+                                <a class="ebb2" href="/Customers/Delete?id=@customer.Id"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination1">
+            <div class="left-section-page">
+                <p>
+                    Showing @((Model.CurrentPage - 1) * Model.PageSize + 1) to @((Model.CurrentPage - 1) *
+                    Model.PageSize +
+                    Model.CustomerList.Count)
+                    of @Model.TotalRecords
+                </p>
+            </div>
+            <div class="right-section-page">
+
+                @if (Model.CurrentPage > 1)
+                {
+
+                    <a class="page-content"
+                        href="?currentPage=@(Model.CurrentPage - 1)&sortColumn=@Model.SortColumn&sortOrder=@Model.SortOrder&pageSize=@Model.PageSize">&lt;&lt;</a>
+
+                }
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+
+                    <a class="page-content" style="text-decoration: underline;"
+                        href="?currentPage=@i&sortColumn=@Model.SortColumn&sortOrder=@Model.SortOrder&pageSize=@Model.PageSize">@i</a>
+
+                }
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+
+                    <a class="page-content"
+                        href="?currentPage=@(Model.CurrentPage + 1)&sortColumn=@Model.SortColumn&sortOrder=@Model.SortOrder&pageSize=@Model.PageSize">>></a>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

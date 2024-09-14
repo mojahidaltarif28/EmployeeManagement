@@ -35,6 +35,7 @@ namespace EmployeeManagement.Pages
                 string connectionString = "Server=localhost;Database=employeeDB;Trusted_Connection=True;TrustServerCertificate=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                   
                     connection.Open();
 
                     string filterQuery = "WHERE 1=1";

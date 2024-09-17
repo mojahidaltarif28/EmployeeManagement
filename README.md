@@ -1,7 +1,7 @@
 # Employee Management System
 
 This is a web-based **Employee Management System** built using **.NET** and **SQL Server**. The system allows users to manage employee records, including image handling (with compression), sorting, pagination, and search functionality.
-
+[Click for live](https://mojahidaltarifemployee.bsite.net/)
 ## Features
 
 - **Employee Management**: Add, edit, delete employee records.
